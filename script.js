@@ -1,11 +1,26 @@
 const jokeEl = document.getElementById('joke')
-const jokeBtn = document.getElementById('jokeBtn')
+const jokeFetchBtn = document.getElementById('jokeFetchBtn')
+const jokeAsyncBtn = document.getElementById('jokeAsyncBtn')
 
-jokeBtn.addEventListener('click', generateJoke)
+jokeFetchBtn.addEventListener('click', generateJokeFetch)
+jokeAsyncBtn.addEventListener('click', generateJokeAsync)
 
-generateJoke()
+generateJokeFetch();
+generateJokeAsync()
 
- function generateJoke() {
+async function generateJokeAsync() {
+    const config = {
+        headers: {
+            Accept: 'application/json',              
+        },
+    }
+
+    const res = await fetch('https://icanhazdadjoke.com', config)
+    const data = await res.json()
+    jokeEl.innerHTML = data.joke    
+}
+
+ function generateJokeFetch() {
      const config = {
          headers: {
              Accept: 'application/json',              
@@ -18,3 +33,18 @@ generateJoke()
             jokeEl.innerHTML = data.joke
         })
  }
+
+ //
+ jokeFetchBtn.addEventListener("mouseover", function() {
+    this.textContent = "Using Fetch to get another joke";
+  })
+  jokeFetchBtn.addEventListener("mouseout", function() {
+    this.textContent = "Get another joke";
+  })
+
+  jokeAsyncBtn.addEventListener("mouseover", function() {
+    this.textContent = "Using Async to get another joke";
+  })
+  jokeAsyncBtn.addEventListener("mouseout", function() {
+    this.textContent = "Get another joke";
+  })
