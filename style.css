@@ -40,3 +40,22 @@ h3 {
 	margin: 50px auto;
 	max-width: 600px;
 }
+
+.btn {	
+	background-color: #9256A2;
+	color: #fff;
+	border: 3px solid #FF7F7F;		
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.l), 0 6px 6px rgba(0, 0, 0, 0.1);
+	padding: 15px 40px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.btn:active {
+	transform: scale(1.0);
+}
+
+.btn:focus {
+	outline: 20;
+}
