@@ -1,6 +1,3 @@
-<img src="https://user-images.githubusercontent.com/22925257/169446002-cd956e1e-92fd-4c52-acdf-43d0381f2bc4.png" width="200" height="200" align="center">
-
-
 # Best dad jokes
 
 > Dad jokes generator made by AC Alexandre Calaça
